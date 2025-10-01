@@ -27,8 +27,8 @@
         android:id="@+id/pseudoEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="56dp"
         android:inputType="text"
-        android:padding="24dp"
         android:hint="@string/pseudo_enter"/>
 
     <Button
