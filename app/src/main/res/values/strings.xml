@@ -15,5 +15,6 @@
     <string name="demo_product_name">Nom du produit</string>
     <string name="retirer">Retirer</string>
     <string name="ajouter">Ajouter</string>
+    <string name="quantity_description">Quantité %1$d</string>
 
 </resources>

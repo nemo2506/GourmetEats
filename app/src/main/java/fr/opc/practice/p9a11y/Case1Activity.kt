@@ -1,8 +1,10 @@
 package fr.opc.practice.p9a11y
 
 import android.os.Bundle
+import android.view.accessibility.AccessibilityEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import fr.opc.practice.p9a11y.databinding.ActivityCase1Binding
 
 class Case1Activity : AppCompatActivity() {
@@ -16,9 +18,21 @@ class Case1Activity : AppCompatActivity() {
         var quantity = 0
 
         binding.quantityText.text = "$quantity"
+//        binding.addButton.setOnClickListener {
+//            quantity++
+//            binding.quantityText.text = "$quantity"
+//            val description = getString(R.string.quantity_description, quantity)
+//            ViewCompat.setStateDescription(binding.quantityText, description)
+//        }
+
         binding.addButton.setOnClickListener {
             quantity++
             binding.quantityText.text = "$quantity"
+            val description = getString(R.string.quantity_description, quantity)
+            ViewCompat.setStateDescription(binding.quantityText, description)
+
+            binding.quantityText.requestFocus()
+            binding.quantityText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
         }
 
         binding.removeButton.setOnClickListener {
@@ -26,7 +40,11 @@ class Case1Activity : AppCompatActivity() {
                 quantity--
                 binding.quantityText.text = "$quantity"
             } else {
-                Toast.makeText(this, getString(R.string.impossible_d_avoir_une_quantit_n_gative), Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    this,
+                    getString(R.string.impossible_d_avoir_une_quantit_n_gative),
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }
         }
