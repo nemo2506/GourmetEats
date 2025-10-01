@@ -18,21 +18,11 @@ class Case1Activity : AppCompatActivity() {
         var quantity = 0
 
         binding.quantityText.text = "$quantity"
-//        binding.addButton.setOnClickListener {
-//            quantity++
-//            binding.quantityText.text = "$quantity"
-//            val description = getString(R.string.quantity_description, quantity)
-//            ViewCompat.setStateDescription(binding.quantityText, description)
-//        }
 
         binding.addButton.setOnClickListener {
             quantity++
             binding.quantityText.text = "$quantity"
-            val description = getString(R.string.quantity_description, quantity)
-            ViewCompat.setStateDescription(binding.quantityText, description)
-
-            binding.quantityText.requestFocus()
-            binding.quantityText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
+            setAccessibilityQuantity()
         }
 
         binding.removeButton.setOnClickListener {
@@ -48,5 +38,12 @@ class Case1Activity : AppCompatActivity() {
                     .show()
             }
         }
+    }
+
+    private fun setAccessibilityQuantity() {
+//            val description = getString(R.string.quantity_description, quantity)
+//            ViewCompat.setStateDescription(binding.quantityText, description)
+            binding.quantityText.requestFocus()
+            binding.quantityText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
     }
 }
