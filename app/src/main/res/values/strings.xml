@@ -17,7 +17,7 @@
     <string name="ajouter">Ajouter</string>
     <string name="quantity_description">Quantité %1$d</string>
     <string name="pseudo_enter">Entrez votre pseudo</string>
-    <string name="favorite_added">Ajouter aux favoris</string>
-    <string name="favorite_removed">Retirer des favoris</string>
-
+    <string name="favorite_added">%1$s ajouté aux favoris</string>
+    <string name="favorite_removed">%1$s retiré des favoris</string>
+    <string name="image_accessibility">représentation de %1$s</string>
 </resources>

@@ -16,10 +16,11 @@ class Case2Activity : AppCompatActivity() {
 
         var isFavourite = false
         setFavouriteButtonIcon(isFavourite)
+        val product = getString(R.string.demo_cookie_text)
         binding.favouriteButton.setOnClickListener {
             isFavourite = !isFavourite
             setFavouriteButtonIcon(isFavourite)
-            accessibilityFavorite(isFavourite)
+            accessibilityFavorite(isFavourite, product)
         }
 
         binding.addRecipeToBasket.setOnClickListener {
@@ -32,7 +33,7 @@ class Case2Activity : AppCompatActivity() {
         }
 
         // description to accessibility
-        binding.productImage.contentDescription = getString(R.string.demo_cookie_text)
+        binding.productImage.contentDescription = getString(R.string.image_accessibility, product)
 
     }
 
@@ -44,9 +45,11 @@ class Case2Activity : AppCompatActivity() {
         }
     }
 
-    private fun accessibilityFavorite(isActivated: Boolean) {
-        val message =
-            getString(if (isActivated) R.string.favorite_added else R.string.favorite_removed)
+    private fun accessibilityFavorite(isActivated: Boolean, product: String) {
+        val message = getString(
+            if (isActivated) R.string.favorite_added else R.string.favorite_removed,
+            product
+        )
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
