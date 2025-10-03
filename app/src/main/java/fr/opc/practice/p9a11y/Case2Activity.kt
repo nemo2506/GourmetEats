@@ -19,6 +19,7 @@ class Case2Activity : AppCompatActivity() {
         binding.favouriteButton.setOnClickListener {
             isFavourite = !isFavourite
             setFavouriteButtonIcon(isFavourite)
+            accessibilityFavorite(isFavourite)
         }
 
         binding.addRecipeToBasket.setOnClickListener {
@@ -37,5 +38,10 @@ class Case2Activity : AppCompatActivity() {
         } else {
             binding.favouriteButton.setImageResource(R.drawable.ic_favourite_off)
         }
+    }
+
+    private fun accessibilityFavorite(isActivated: Boolean) {
+        val message = getString(if (isActivated) R.string.favorite_added else R.string.favorite_removed)
+        Toast.makeText( this, message, Toast.LENGTH_SHORT ).show()
     }
 }
