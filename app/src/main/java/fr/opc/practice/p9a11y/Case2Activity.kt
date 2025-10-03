@@ -33,7 +33,7 @@ class Case2Activity : AppCompatActivity() {
         }
 
         // description to accessibility
-        binding.productImage.contentDescription = getString(R.string.image_accessibility, product)
+//        binding.productImage.contentDescription = getString(R.string.image_accessibility, product)
 
     }
 
