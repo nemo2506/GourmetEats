@@ -30,6 +30,10 @@ class Case2Activity : AppCompatActivity() {
         binding.recipeCard.setOnClickListener {
             // TODO navigate to recipe screen
         }
+
+        // description to accessibility
+        binding.productImage.contentDescription = getString(R.string.demo_cookie_text)
+
     }
 
     private fun setFavouriteButtonIcon(isFavourite: Boolean) {
@@ -41,7 +45,8 @@ class Case2Activity : AppCompatActivity() {
     }
 
     private fun accessibilityFavorite(isActivated: Boolean) {
-        val message = getString(if (isActivated) R.string.favorite_added else R.string.favorite_removed)
-        Toast.makeText( this, message, Toast.LENGTH_SHORT ).show()
+        val message =
+            getString(if (isActivated) R.string.favorite_added else R.string.favorite_removed)
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
