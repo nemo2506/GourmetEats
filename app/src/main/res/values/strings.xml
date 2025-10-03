@@ -20,4 +20,5 @@
     <string name="favorite_added">%1$s ajouté aux favoris</string>
     <string name="favorite_removed">%1$s retiré des favoris</string>
     <string name="image_accessibility">représentation de %1$s</string>
+    <string name="selected_accessibility">quantité à %1$s</string>
 </resources>

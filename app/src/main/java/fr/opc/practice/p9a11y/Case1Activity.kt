@@ -22,14 +22,14 @@ class Case1Activity : AppCompatActivity() {
         binding.addButton.setOnClickListener {
             quantity++
             binding.quantityText.text = "$quantity"
-            accessibilityQuantity()
+            accessibilityQuantity(quantity)
         }
 
         binding.removeButton.setOnClickListener {
             if (quantity > 0) {
                 quantity--
                 binding.quantityText.text = "$quantity"
-                accessibilityQuantity()
+                accessibilityQuantity(quantity)
             } else {
                 Toast.makeText(
                     this,
@@ -41,10 +41,15 @@ class Case1Activity : AppCompatActivity() {
         }
     }
 
-    private fun accessibilityQuantity() {
+    private fun accessibilityQuantity(quantity: Int) {
 //            val description = getString(R.string.quantity_description, quantity)
 //            ViewCompat.setStateDescription(binding.quantityText, description)
-            binding.quantityText.requestFocus()
-            binding.quantityText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
+//            binding.quantityText.requestFocus()
+//            binding.quantityText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
+        Toast.makeText(
+            this,
+            getString(R.string.selected_accessibility, quantity.toString()),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
