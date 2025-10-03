@@ -29,7 +29,8 @@
         android:minHeight="56dp"
         android:inputType="text"
         android:hint="@string/pseudo_gest"
-        android:autofillHints="nickname"/>
+        android:autofillHints="username"
+        android:imeOptions="actionNext"/>
 
     <Button
         android:id="@+id/validateButton"
