@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:minHeight="56dp"
         android:inputType="text"
-        android:hint="@string/pseudo_enter"/>
+        android:hint="@string/pseudo_gest"/>
 
     <Button
         android:id="@+id/validateButton"
