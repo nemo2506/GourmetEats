@@ -1,11 +1,12 @@
 package fr.opc.practice.p9a11y
 
 import android.os.Bundle
-import android.view.accessibility.AccessibilityEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import fr.opc.practice.p9a11y.databinding.ActivityCase1Binding
+import fr.opc.practice.p9a11y.utils.toast
+import androidx.core.view.ViewCompat
+import android.view.accessibility.AccessibilityEvent
 
 class Case1Activity : AppCompatActivity() {
     private lateinit var binding: ActivityCase1Binding
@@ -31,12 +32,7 @@ class Case1Activity : AppCompatActivity() {
                 binding.quantityText.text = "$quantity"
                 accessibilityQuantity(quantity)
             } else {
-                Toast.makeText(
-                    this,
-                    getString(R.string.impossible_d_avoir_une_quantit_n_gative),
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
+                this@Case1Activity.toast(getString(R.string.impossible_d_avoir_une_quantit_n_gative))
             }
         }
     }
@@ -46,10 +42,7 @@ class Case1Activity : AppCompatActivity() {
 //            ViewCompat.setStateDescription(binding.quantityText, description)
 //            binding.quantityText.requestFocus()
 //            binding.quantityText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED)
-        Toast.makeText(
-            this,
-            getString(R.string.selected_accessibility, quantity.toString()),
-            Toast.LENGTH_SHORT
-        ).show()
+        val message: String = getString(R.string.quantity_accessibility, quantity)
+        this@Case1Activity.toast(message)
     }
 }

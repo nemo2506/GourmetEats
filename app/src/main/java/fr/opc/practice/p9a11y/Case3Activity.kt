@@ -3,10 +3,10 @@ package fr.opc.practice.p9a11y
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.accessibility.AccessibilityEvent
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import fr.opc.practice.p9a11y.databinding.ActivityCase3Binding
+import fr.opc.practice.p9a11y.utils.toast
 
 class Case3Activity : AppCompatActivity() {
     private lateinit var binding: ActivityCase3Binding
@@ -48,7 +48,7 @@ class Case3Activity : AppCompatActivity() {
     }
 
     private fun messageAccessibility(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        this@Case3Activity.toast(message)
     }
 
 }

@@ -20,7 +20,7 @@
     <string name="favorite_added">%1$s ajouté aux favoris</string>
     <string name="favorite_removed">%1$s retiré des favoris</string>
     <string name="image_accessibility">représentation de %1$s</string>
-    <string name="selected_accessibility">quantité à %1$s</string>
+    <string name="quantity_accessibility">quantité à %1$d</string>
     <string name="username_valid">Peuso valide pour %1$s</string>
     <string name="connected">vous êtes connecté</string>
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.opc.practice.p9a11y.databinding.ActivityCase2Binding
+import fr.opc.practice.p9a11y.utils.toast
 
 class Case2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityCase2Binding
@@ -24,17 +25,12 @@ class Case2Activity : AppCompatActivity() {
         }
 
         binding.addRecipeToBasket.setOnClickListener {
-            Toast.makeText(this, getString(R.string.recette_ajout_au_panier), Toast.LENGTH_SHORT)
-                .show()
+            this@Case2Activity.toast(getString(R.string.recette_ajout_au_panier))
         }
 
         binding.recipeCard.setOnClickListener {
             // TODO navigate to recipe screen
         }
-
-        // description to accessibility
-//        binding.productImage.contentDescription = getString(R.string.image_accessibility, product)
-
     }
 
     private fun setFavouriteButtonIcon(isFavourite: Boolean) {
@@ -50,6 +46,6 @@ class Case2Activity : AppCompatActivity() {
             if (isActivated) R.string.favorite_added else R.string.favorite_removed,
             product
         )
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        this@Case2Activity.toast(message)
     }
 }
