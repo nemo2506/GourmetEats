@@ -19,20 +19,20 @@
         style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pseudo"
-        android:labelFor="@id/pseudoEdit" />
+        android:labelFor="@id/pseudoEdit"
+        android:text="@string/pseudo" />
 
     <EditText
         android:id="@+id/pseudoEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="56dp"
-        android:inputType="text"
-        android:hint="@string/pseudo_gest"
         android:autofillHints="username"
-        android:textColor="@color/gray600"
-        android:textColorHint="@color/gray600"
-        android:imeOptions="actionNext"/>
+        android:hint="@string/pseudo_gest"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:minHeight="56dp"
+        android:textColor="?attr/colorOnBackground"
+        android:textColorHint="?attr/colorOnSurface" />
 
     <Button
         android:id="@+id/validateButton"
