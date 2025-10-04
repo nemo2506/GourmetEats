@@ -30,6 +30,8 @@
         android:inputType="text"
         android:hint="@string/pseudo_gest"
         android:autofillHints="username"
+        android:textColor="@color/gray600"
+        android:textColorHint="@color/gray600"
         android:imeOptions="actionNext"/>
 
     <Button
